@@ -1,5 +1,7 @@
 # Prompt Sandbox App
 
+ <a href= "https://prompt-sandbox-kappa.vercel.app"> Preview </a>
+
 This app serves as a Prompt Sandbox with features such as model selection and tuning.
 
 Built with **Next.js** and **TailwindCSS**.
