@@ -1,8 +1,7 @@
 # Prompt Sandbox App
 
-<a href="https://prompt-sandbox-kappa.vercel.app" target="_blank" rel="noopener noreferrer">
-  Preview
-</a>
+[Preview](https://prompt-sandbox-kappa.vercel.app){:target="_blank"}
+
 
 This app serves as a Prompt Sandbox with features such as model selection and tuning.
 
