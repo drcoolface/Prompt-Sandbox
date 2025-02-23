@@ -23,7 +23,7 @@ const Side = ({ isCollapsed }: { isCollapsed: boolean }) => {
 
   return (
     <div className="h-full">
-      <div className={`my-5 md:pt-4 text-3xl px-4 whitespace-nowrap`}>
+      <div className={`my-2 md:pt-2 text-3xl px-2 whitespace-nowrap`}>
         GEN AI
       </div>
 

@@ -10,13 +10,13 @@ const formAction = (event: React.FormEvent) => {
 const ApiForm = () => {
   return (
     <div className="w-full">
-      <form className="w-1/2 flex flex-col gap-4 p-4" onSubmit={formAction}>
+      <form className="w-1/2 flex flex-col gap-4 " onSubmit={formAction}>
         <label className="text-3xl font-bold">API KEY</label>
         <input
           type="password"
           aria-label="API Key"
           defaultValue={"API_KEY"}
-          className="h-12 border border-gray-400 rounded"
+          className="h-12 border w-1/2 p-2 border-gray-400 text-black rounded"
         />
         <button className="btn-secondary w-1/2" type="submit">
           Save

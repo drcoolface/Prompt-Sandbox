@@ -36,7 +36,9 @@
            active:from-primary-600 active:to-primary-800
            dark:active:from-primary-500 dark:active:to-primary-600
            disabled:from-slate-300 disabled:to-slate-400
-           disabled:hover:from-slate-400 disabled:hover:to-slate-500;
+           disabled:hover:from-slate-400 disabled:hover:to-slate-500
+           dark:disabled:from-slate-300 dark:disabled:to-slate-400
+           dark:disabled:hover:from-slate-400 dark:disabled:hover:to-slate-500;
   }
 
   .btn-secondary {
@@ -50,7 +52,7 @@
   }
 
   .primary-slider {
-    @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer
+    @apply w-full h-2 bg-gray-50 rounded-lg appearance-none cursor-pointer
       dark:bg-gray-700 
       [&::-webkit-slider-thumb]:appearance-none 
       [&::-webkit-slider-thumb]:w-4 
@@ -76,7 +78,7 @@
       [&::-moz-range-thumb]:transition-all;
   }
   .secondary-slider {
-    @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer
+    @apply w-full h-2 bg-gray-50 rounded-lg appearance-none cursor-pointer
       dark:bg-gray-700 
       [&::-webkit-slider-thumb]:appearance-none 
       [&::-webkit-slider-thumb]:w-4 

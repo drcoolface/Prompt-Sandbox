@@ -7,16 +7,23 @@ const Navbar = () => {
   const path = usePathname();
 
   useEffect(() => {
+    // Check localStorage first
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setDarkMode(savedTheme === "dark");
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else if (savedTheme === "light") {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
     } else {
+      // If no saved preference, check system preference
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
       ).matches;
       setDarkMode(prefersDark);
       document.documentElement.classList.toggle("dark", prefersDark);
+      localStorage.setItem("theme", prefersDark ? "dark" : "light");
     }
   }, []);
 
@@ -46,7 +53,7 @@ const Navbar = () => {
           <div className="ml-auto">
             <button
               onClick={toggleDarkMode}
-              className={`relative w-20 h-10 rounded-full transition-colors duration-300 ${
+              className={`relative w-14 h-8 md:w-20 md:h-10 rounded-full transition-colors duration-300 ${
                 darkMode ? "bg-gray-800" : "bg-gray-200"
               }`}
               aria-label={
@@ -54,11 +61,15 @@ const Navbar = () => {
               }
             >
               <div
-                className={`absolute top-1 left-1 w-8 h-8 rounded-full transform transition-transform duration-300 flex items-center justify-center ${
-                  darkMode ? "translate-x-10 bg-gray-800" : "bg-white"
+                className={`absolute top-1 left-1 w-6 h-6 md:w-8 md:h-8 rounded-full transform transition-transform duration-300 flex items-center justify-center ${
+                  darkMode
+                    ? "translate-x-6 md:translate-x-10 bg-gray-800"
+                    : "bg-white"
                 }`}
               >
-                <span className="text-lg">{darkMode ? "🌙" : "☀️"}</span>
+                <span className="text-sm md:text-lg">
+                  {darkMode ? "🌙" : "☀️"}
+                </span>
               </div>
             </button>
           </div>

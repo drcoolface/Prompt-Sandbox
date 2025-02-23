@@ -8,7 +8,7 @@ const Shell = ({ children }: { children: React.ReactNode }) => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   return (
-    <div className="flex w-screen h-screen overflow-clip">
+    <div className="flex w-screen h-screen overflow-clip ">
       <aside
         className={`h-full  transition-all duration-300 relative ${
           isCollapsed ? "w-[40px]" : "w-[100px] md:w-[150px]"
@@ -30,7 +30,9 @@ const Shell = ({ children }: { children: React.ReactNode }) => {
       </aside>
       <div className="w-full overflow-hidden">
         <NavBar />
-        <main className="h-full w-full p-6">{children}</main>
+        <main className="h-full w-full pl-4 py-4 bg-slate-200 dark:bg-slate-900 rounded-tl-3xl">
+          {children}
+        </main>
       </div>
     </div>
   );
